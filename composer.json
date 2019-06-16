@@ -1,0 +1,19 @@
+{
+    "name": "mawdoo3customsearchtask/search",
+    "description": "This package will allow the user to search any topic using google custom search api, get the top 10 results from mawdoo3.com, save the selected results, add comments on them, modify them, or delete them from the database.",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Laith Al-Ammouri",
+            "email": "laith.alamouri@mawdoo3.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "Mawdoo3\\Search\\": "src/"
+        }
+    }
+}
