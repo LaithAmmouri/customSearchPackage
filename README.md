@@ -26,7 +26,7 @@ This package will allow the user to search any topic using google custom search 
 
 * cd to app/Console/ and open Kernel.php
 * Search for protected $commands, and add this line ```Commands\ExportResults::class```
-* In your terminal run ```php artisan export-to-csv```
+* In your terminal run ```php artisan export-to-csv``` to get all database records and export them to the csv file, or you can run ```php artisan export-to-csv --numberOfRecords=number``` to export a specific amount of records
 * Search for CSVFiles folder in the root of your projects, and you will find the exported file
 
 ## Authors

@@ -12,7 +12,7 @@ class ExportResults extends Command
      *
      * @var string
      */
-    protected $signature = 'export-to-csv';
+    protected $signature = 'export-to-csv {--numberOfRecords=}';
 
     /**
      * The console command description.
@@ -38,8 +38,15 @@ class ExportResults extends Command
      */
     public function handle()
     {
+        $numberOfRecords = $this->option('numberOfRecords');
+
+        if($numberOfRecords == null) {
+            $savedResults = SavedResults::all()->toArray();
+        } else {
+            $savedResults = SavedResults::orderBy('created_at', 'desc')->take($numberOfRecords)->get()->toArray();
+        }
+
         $headers = ['id', 'title', 'description', 'link', 'comment'];
-        $savedResults = SavedResults::all()->toArray();
         array_unshift($savedResults, $headers);
 
         if(!file_exists('CSVFiles')) {
